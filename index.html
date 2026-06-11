@@ -1,0 +1,732 @@
+<!doctype html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MONCH - No Es Fast Food, Es MONCH</title>
+    <meta
+      content="Premium Angus burgers, hand-crafted brioche, and the soul of a classic diner. Experience the Monch."
+      name="description"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Archivo+Narrow:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#3f2c29",
+              "on-surface-variant": "#5c403b",
+              "tertiary-fixed-dim": "#c8c6c5",
+              "on-surface": "#281715",
+              "on-secondary-fixed": "#221b0b",
+              primary: "#b40004",
+              "surface-container-highest": "#fcdbd6",
+              "on-error": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#410000",
+              "on-background": "#281715",
+              "outline-variant": "#e6bdb7",
+              "on-primary-container": "#fff3f1",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#1c1b1b",
+              "on-tertiary-container": "#f8f5f4",
+              "on-secondary-container": "#6e634e",
+              outline: "#916f6a",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#4f4633",
+              "error-container": "#ffdad6",
+              "surface-bright": "#fff8f7",
+              surface: "#fff8f7",
+              "on-primary-fixed-variant": "#930003",
+              "secondary-container": "#f0e1c7",
+              "inverse-on-surface": "#ffedea",
+              "surface-tint": "#be0b0a",
+              "surface-container": "#ffe9e6",
+              "surface-dim": "#f3d3ce",
+              "surface-container-high": "#ffe2dd",
+              "surface-container-low": "#fff0ee",
+              tertiary: "#585857",
+              "primary-fixed-dim": "#ffb4a9",
+              "inverse-primary": "#ffb4a9",
+              "tertiary-fixed": "#e5e2e1",
+              "primary-container": "#d9261c",
+              "primary-fixed": "#ffdad5",
+              "secondary-fixed": "#f0e1c7",
+              secondary: "#685d49",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#d3c5ac",
+              "on-tertiary-fixed-variant": "#474746",
+              error: "#ba1a1a",
+              "surface-variant": "#fcdbd6",
+              "tertiary-container": "#717070",
+              background: "#fff8f7",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              base: "8px",
+              "stack-md": "12px",
+              "margin-desktop": "40px",
+              "stack-sm": "4px",
+              "margin-mobile": "20px",
+              "stack-lg": "24px",
+              gutter: "16px",
+            },
+            fontFamily: {
+              "body-md": ["Archivo Narrow"],
+              "display-lg": ["Anybody"],
+              "headline-lg-mobile": ["Anybody"],
+              "body-lg": ["Archivo Narrow"],
+              "headline-lg": ["Anybody"],
+              "headline-xl": ["Anybody"],
+              "label-bold": ["Space Grotesk"],
+            },
+            fontSize: {
+              "body-md": ["16px", { lineHeight: "1.4", fontWeight: "500" }],
+              "display-lg": [
+                "72px",
+                {
+                  lineHeight: "1.0",
+                  letterSpacing: "-0.04em",
+                  fontWeight: "900",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "1.2", fontWeight: "800" },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.5", fontWeight: "600" }],
+              "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "800" }],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-bold": ["14px", { lineHeight: "1.2", fontWeight: "700" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .checkerboard-border {
+        background-image:
+          linear-gradient(45deg, #b40004 25%, transparent 25%),
+          linear-gradient(-45deg, #b40004 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, #b40004 75%),
+          linear-gradient(-45deg, transparent 75%, #b40004 75%);
+        background-size: 20px 20px;
+        background-position:
+          0 0,
+          0 10px,
+          10px -10px,
+          -10px 0px;
+        background-color: #fff8f7;
+        height: 20px;
+        width: 100%;
+      }
+
+      .brutalist-shadow {
+        box-shadow: 4px 4px 0px 0px #b40004;
+      }
+
+      .sticker-rotate {
+        transform: rotate(-3deg);
+      }
+
+      .sticker-rotate-alt {
+        transform: rotate(3deg);
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .marquee-content {
+        display: inline-block;
+        animation: marquee 20s linear infinite;
+      }
+
+      /* Responsive Text Fixes */
+      @media (max-width: 768px) {
+        .text-display-lg {
+          font-size: 48px;
+          line-height: 1.1;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background selection:bg-primary selection:text-white font-body-md overflow-x-hidden"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b-4 border-primary"
+    >
+      <nav
+        class="flex justify-between items-center w-full px-base md:px-margin-desktop py-stack-md max-w-screen-2xl mx-auto"
+      >
+        <div
+          class="font-anybody text-headline-lg font-black italic text-primary uppercase"
+        >
+          MONCH
+        </div>
+        <div class="hidden md:flex items-center gap-gutter">
+          <a
+            class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200"
+            href="#menu"
+            >Menu</a
+          >
+          <a
+            class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200"
+            href="#story"
+            >Contacto</a
+          >
+        </div>
+        <a href="ordenar.html">
+          <button
+            class="bg-primary text-on-primary font-label-bold text-label-bold px-stack-lg py-2 brutalist-shadow hover:scale-95 transition-transform active:scale-90"
+          >
+            Ordera Ahora
+          </button>
+        </a>
+      </nav>
+    </header>
+    <main class="pt-20">
+      <section
+        class="relative min-h-[921px] flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop bg-surface overflow-hidden"
+      >
+        <div class="checkerboard-border absolute top-0 left-0"></div>
+        <div
+          class="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-stack-lg"
+        >
+          <div class="md:w-1/2 text-left">
+            <div
+              class="inline-block bg-primary text-white font-label-bold text-label-bold px-3 py-1 sticker-rotate mb-stack-md"
+            >
+              BURGUER
+            </div>
+            <h1
+              class="font-display-lg text-display-lg text-primary uppercase mb-stack-md"
+            >
+              NO ES FAST FOOD,<br />ES <span class="italic">MONCH</span>
+            </h1>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-stack-lg"
+            >
+              Rompiendo las reglas de la comida rápida con hamburguesas
+              artesanales de Angus, pan brioche hecho a mano y un sabor que
+              desafía lo convencional. Bienvenido a Monch, donde cada mordisco
+              es una declaración de amor por la comida sin compromisos.
+            </p>
+            <div class="flex flex-wrap gap-gutter">
+              <a
+                class="bg-primary text-white font-headline-lg px-8 py-4 border-2 border-primary brutalist-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+                href="ordenar.html"
+              >
+                Ordena tu Monch
+              </a>
+              <div
+                class="flex items-center gap-stack-sm text-primary font-label-bold"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: 'FILL' 1"
+                  >star</span
+                >
+                <span>SERVICIO DE MARTES A DOMINGOS</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="md:w-1/2 relative pb-16 md:pb-0 z-0">
+            <div class="relative z-10 sticker-rotate-alt">
+              <img
+                alt="Gourmet Burger Detail"
+                class="w-full max-w-md mx-auto border-4 border-primary brutalist-shadow"
+                data-alt="A close-up, high-angle studio shot of a massive gourmet burger with multiple beef patties, melted yellow cheddar cheese dripping down the sides, and crispy bacon strips on a toasted sesame seed brioche bun. The lighting is dramatic and warm, set against a vibrant solid red background that matches the high-energy Monch brand. The burger looks messy, authentic, and delicious, emphasizing a premium grit aesthetic with sharp focus on textures."
+                src="logo1.png"
+              />
+            </div>
+            <div
+              class="absolute -bottom-10 -right-10 w-48 h-48 hidden md:block sticker-rotate"
+            >
+              <img
+                alt="Monch Mascot"
+                class="w-full h-full object-contain filter grayscale"
+                data-alt="A vintage, rubber-hose style cartoon burger character with white gloves and large expressive eyes, walking joyfully. The character is rendered in a clean, thick-lined black ink style on a white background, reminiscent of mid-century Americana advertising stickers. It has a mischievous and energetic vibe, fitting the unapologetic personality of the Monch brand."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnOG41UQkWycTfpMMNFdDRT79YHdOPudIX4H-7tSdlvKhXCRLRw1-4D-HpS5AlcX44OgkcHKbjRJLS4flTrz6MQOZC2rPrXWMPvAvqWjqkC-3j5j3DmDzguO7sw1b2lzpB7kWZrfrGNb58O5I4YkhfCBPZJjxCjcX0bHwxeFv72KTHhsd4n50_QrpcmKcFWrVaaFREZvg8FBpk7B1Kao2ZGOHNFX2qn0uOJ7zEOrm1x3Lb3XIhzOEnAWSWe1uBxYzyc81ns4X_aVA"
+              />
+            </div>
+          </div>
+        </div>
+        
+        <div
+          class="absolute bottom-10 left-0 w-full bg-primary py-2 marquee-container z-20"
+        >
+          <div
+            class="marquee-content font-headline-lg text-white uppercase italic flex gap-margin-desktop"
+          >
+            <span>Monch Burgers</span><span>•</span> <span>No Es Fast Food</span
+            ><span>•</span> <span>Servicio de Martes a Domingo</span
+            ><span>•</span> <span>Premium Angus</span><span>•</span>
+            <span>Artesanal</span><span>•</span> <span>Breaking the Rules</span
+            ><span>•</span> <span>Monch Burgers</span><span>•</span>
+            <span>No Es Fast Food</span><span>•</span> <span>Premium Angus</span
+            ><span>•</span> <span>Artesanal</span><span>•</span>
+            <span>Servicio de Martes a Domingo</span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto"
+        id="menu"
+      >
+        <div
+          class="flex flex-col md:flex-row gap-gutter items-end mb-margin-desktop border-b-4 border-primary pb-4"
+        >
+          <h2 class="font-display-lg text-headline-xl text-primary uppercase">
+            MENU
+          </h2>
+          <p class="font-label-bold text-on-surface-variant mb-2">
+            TODAS LAS HAMBURGUESAS VIENEN ACOMPAÑADAS CON PAPAS A LA FRANCESA.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+          <div class="md:col-span-8 space-y-gutter">
+            <div
+              class="bg-white border-2 border-primary p-gutter relative overflow-hidden group"
+            >
+              <div class="flex justify-between items-start mb-stack-md">
+                <div>
+                  <h3 class="font-headline-lg text-primary uppercase">
+                    CLÁSICA MONCH
+                  </h3>
+                  <p class="text-error font-bold italic">
+                    La de siempre, pero mejor.
+                  </p>
+                </div>
+                <span class="font-display-lg text-headline-lg text-primary"
+                  >$28.900</span
+                >
+              </div>
+              <p class="font-body-md text-on-surface-variant leading-tight">
+                Pan brioche artesanal, carne Angus 125g, queso Colby, queso
+                mozzarella, tocineta premium, tomate, lechuga lisa, salsa morrón
+                y alioli de la casa.
+              </p>
+              <div class="mt-stack-md flex gap-stack-sm">
+                <span
+                  class="bg-surface-container text-on-surface-variant px-2 py-1 text-xs border border-outline"
+                  >ANGUS 125G</span
+                >
+                <span
+                  class="bg-surface-container text-on-surface-variant px-2 py-1 text-xs border border-outline"
+                  >BRIOCHE</span
+                >
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+              <div class="bg-white border-2 border-primary p-gutter">
+                <div class="flex justify-between items-start mb-stack-md">
+                  <h3 class="font-headline-lg text-primary uppercase">
+                    SWEET MONCH
+                  </h3>
+                  <span class="font-headline-lg text-primary">$32.900</span>
+                </div>
+                <p class="text-error font-bold italic mb-stack-sm">
+                  Una locura cremosa con toque dulce.
+                </p>
+                <p class="font-body-md text-on-surface-variant leading-tight">
+                  Pan brioche artesanal, carne Angus 125g, queso crema,
+                  mermelada de tocineta en reducción de Jack Daniels y salsa
+                  morrón.
+                </p>
+              </div>
+              <div class="bg-white border-2 border-primary p-gutter">
+                <div class="flex justify-between items-start mb-stack-md">
+                  <h3 class="font-headline-lg text-primary uppercase">
+                    SMASH MONCH
+                  </h3>
+                  <span class="font-headline-lg text-primary">$30.900</span>
+                </div>
+                <p class="text-error font-bold italic mb-stack-sm">
+                  Doble smash, doble sabor.
+                </p>
+                <p class="font-body-md text-on-surface-variant leading-tight">
+                  Pan brioche artesanal, dos carnes Angus de 65g, doble queso
+                  cheddar, tocineta premium, salsa morrón y alioli de la casa.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+              <div class="bg-white border-2 border-primary p-gutter">
+                <div class="flex justify-between items-start mb-stack-md">
+                  <h3 class="font-headline-lg text-primary uppercase">
+                    ORIGINAL MONCH
+                  </h3>
+                  <span class="font-headline-lg text-primary">$29.900</span>
+                </div>
+                <p class="text-error font-bold italic mb-stack-sm">
+                  Nuestra joya de la corona.
+                </p>
+                <p class="font-body-md text-on-surface-variant leading-tight">
+                  Pan brioche artesanal, carne Angus 125g, doble queso Colby,
+                  tocineta premium, salsa morrón y alioli de la casa.
+                </p>
+              </div>
+              <div
+                class="bg-primary text-white border-2 border-primary p-gutter brutalist-shadow"
+              >
+                <div class="flex justify-between items-start mb-stack-md">
+                  <h3 class="font-headline-lg uppercase">DOBLE MONCH</h3>
+                  <span class="font-headline-lg">$35.900</span>
+                </div>
+                <p
+                  class="text-secondary-container font-bold italic mb-stack-sm"
+                >
+                  Para los de apetito serio.
+                </p>
+                <p class="font-body-md opacity-90 leading-tight">
+                  Pan brioche artesanal, doble carne Angus (250g), doble queso
+                  Colby, doble tocineta premium, salsa morrón y alioli de la
+                  casa.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-4 space-y-gutter">
+            <div
+              class="bg-surface-container-highest border-2 border-primary p-gutter sticker-rotate-alt"
+            >
+              <h3 class="font-headline-lg text-primary uppercase mb-stack-sm">
+                PAPAS MONCH XL
+              </h3>
+              <div
+                class="flex justify-between items-center mb-stack-sm border-b border-primary/20 pb-1"
+              >
+                <span class="font-label-bold">280G DE PURO SABOR</span>
+                <span class="font-headline-lg text-primary">$14.900</span>
+              </div>
+              <p class="font-body-md text-on-surface-variant">
+                Miel picante, tocineta crispy y queso parmesano.
+              </p>
+            </div>
+            <div class="bg-white border-2 border-primary p-gutter">
+              <h3
+                class="font-label-bold text-primary uppercase mb-stack-md border-b-2 border-primary"
+              >
+                ADICIONALES
+              </h3>
+              <ul class="space-y-stack-sm font-body-md">
+                <li class="flex justify-between">
+                  <span>Tocineta premium</span> <span>$2.000</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Queso Colby</span> <span>$1.600</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Queso Cheddar</span> <span>$1.500</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Queso Mozzarella</span> <span>$1.200</span>
+                </li>
+                <li
+                  class="flex justify-between border-t border-primary/10 pt-2 font-bold"
+                >
+                  <span>Papas a la francesa (140g)</span> <span>$6.900</span>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="p-gutter border-4 border-dashed border-primary/30 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500"
+            >
+              <img
+                alt="Certified Angus Beef"
+                class="w-32 h-32 object-contain"
+                data-alt="A vintage-style circular seal or logo for 'Certified Angus Beef' with a black bull silhouette in the center. The design uses bold black, gold, and red colors with a slightly distressed, printed texture to evoke a sense of tradition and high-quality meat sourcing. It is set against a clean cream background that reflects the Monch brand's premium diner aesthetic."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEhdltQdLWZJ_g7mdm5C_lgndGp8n2AfuJ96lEBo9a5GvzcKKG4zS17GDBWzyy0cmz3VFNKJzPIkW-MybbRgsA1prVCYbJFGYP-MKqoWuQ7n8iIzx7pCzNpmaPdKWaA6mL3zxcpqbWW9OjMcXgyP3Ir5xdybId406qFdKFzvojY_-Ig-u4-Z-pxuyjjCXH1wa4aUaXpIeMdEpnUxD0IA_bAVlcVjDFLA_7HUPj1YkWGyxFgNSzCbOYJiAenJ8RYksBW8UEK6otOt0"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="bg-inverse-surface py-20 px-margin-mobile md:px-margin-desktop text-center overflow-hidden relative"
+      >
+        <div class="absolute inset-0 opacity-10">
+          </div>
+        <div class="max-w-4xl mx-auto relative z-10">
+          <p class="font-headline-lg text-surface mb-stack-md">
+            ¿SABES POR QUÉ CUANDO ESTÁS TRISTE...
+          </p>
+          <h2
+            class="font-display-lg text-primary-fixed uppercase mb-margin-desktop"
+          >
+            TE DAN GANAS DE UNA HAMBURGUESA?
+          </h2>
+          <div
+            class="relative group cursor-pointer max-w-2xl mx-auto border-8 border-primary brutalist-shadow"
+          >
+            <img
+              alt="Burger Detail Macro"
+              class="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+              data-alt="A hyper-detailed, extreme close-up of a perfectly grilled burger patty with melted cheese bubbling over the edges. The focus is so sharp you can see the glistening oils and the texture of the meat. The color palette is dominated by warm reds and rich browns, with bright pops of yellow from the cheese. The image feels tactile and intensely appetizing, styled with high-contrast studio lighting that screams premium quality."
+              src="logorojo.png"
+            />
+            <div
+              class="absolute bottom-6 right-6 flex flex-col gap-2 items-end"
+            >
+              <div
+                class="bg-primary text-white font-label-bold px-4 py-1 sticker-rotate"
+              >
+                MONCH BURGER
+              </div>
+              <div
+                class="bg-white text-primary font-label-bold px-4 py-1 sticker-rotate-alt"
+              >
+                ROMPER REGLAS
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-margin-desktop"
+      >
+        <div class="space-y-stack-lg">
+          <h3
+            class="font-display-lg text-headline-xl text-primary uppercase border-b-4 border-primary pb-2"
+          >
+            BEBIDAS
+          </h3>
+          <div class="grid grid-cols-1 gap-gutter">
+            <div
+              class="flex justify-between items-center border-b border-primary/20 pb-4"
+            >
+              <div>
+                <p class="font-headline-lg text-on-surface">GASEOSAS</p>
+                <p class="font-body-md text-on-surface-variant">
+                  (Coca-Cola, Coca-Cola Zero)
+                </p>
+              </div>
+              <span class="font-headline-lg text-primary">$6.000</span>
+            </div>
+            <div
+              class="flex justify-between items-center border-b border-primary/20 pb-4"
+            >
+              <p class="font-headline-lg text-on-surface uppercase">
+                AGUA <span class="text-sm font-normal">(CON O SIN GAS)</span>
+              </p>
+              <span class="font-headline-lg text-primary">$6.000</span>
+            </div>
+            <div
+              class="flex justify-between items-center border-b border-primary/20 pb-4"
+            >
+              <p class="font-headline-lg text-on-surface uppercase">
+                SODA HATSU
+              </p>
+              <span class="font-headline-lg text-primary">$7.000</span>
+            </div>
+            <div
+              class="flex justify-between items-center border-b border-primary/20 pb-4"
+            >
+              <p class="font-headline-lg text-on-surface uppercase">
+                CERVEZA CORONA
+              </p>
+              <span class="font-headline-lg text-primary">$7.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-stack-lg relative">
+          <div
+            class="flex justify-between items-end border-b-4 border-primary pb-2"
+          >
+            <h3 class="font-display-lg text-headline-xl text-primary uppercase">
+              POSTRES
+            </h3>
+            <div
+              class="bg-surface-container text-on-surface-variant font-label-bold px-4 py-1 border-x-2 border-t-2 border-primary mb-[-4px]"
+            >
+              POWERED BY DANKAI
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-1 gap-gutter bg-white p-gutter border-2 border-primary brutalist-shadow"
+          >
+            <div class="flex justify-between items-start">
+              <div>
+                <p class="font-label-bold text-primary uppercase">
+                  BROWNIE DE NUCITA
+                </p>
+                <p class="font-headline-lg text-on-surface">ABRAZO DE MAMÁ</p>
+              </div>
+              <span class="font-headline-lg text-primary">$5.500</span>
+            </div>
+            <div
+              class="flex justify-between items-start border-t border-primary/10 pt-4"
+            >
+              <div>
+                <p class="font-label-bold text-primary uppercase">
+                  BROWNIE DE REDVELVET
+                </p>
+                <p class="font-headline-lg text-on-surface">
+                  PREFERIDO DE MAMÁ
+                </p>
+              </div>
+              <span class="font-headline-lg text-primary">$6.500</span>
+            </div>
+            <div
+              class="flex justify-between items-start border-t border-primary/10 pt-4"
+            >
+              <div>
+                <p class="font-label-bold text-primary uppercase">
+                  BROWNIE DE CARAMELO SALADO
+                </p>
+                <p class="font-headline-lg text-on-surface">REGAÑO DE MAMÁ</p>
+              </div>
+              <span class="font-headline-lg text-primary">$7.000</span>
+            </div>
+            <div
+              class="flex justify-between items-start border-t border-primary/10 pt-4"
+            >
+              <div>
+                <p class="font-label-bold text-primary uppercase">
+                  BROWNIE DE CHOCOLATE SEMIAMARGO
+                </p>
+                <p class="font-headline-lg text-on-surface">
+                  CAPRICHO DE LA ABUELA
+                </p>
+              </div>
+              <span class="font-headline-lg text-primary">$6.500</span>
+            </div>
+            <div
+              class="mt-stack-lg p-stack-md bg-surface-container-highest border border-primary space-y-stack-md"
+            >
+              <div class="flex justify-between items-start">
+                <div>
+                  <p class="font-headline-lg text-primary uppercase">
+                    CUCHAREABLE REDVELVET
+                  </p>
+                  <p class="font-body-md text-on-surface-variant">
+                    Base de brownie redvelvet, crema de Oreo y crema de la casa.
+                  </p>
+                </div>
+                <span class="font-headline-lg text-primary">$15.000</span>
+              </div>
+              <div
+                class="flex justify-between items-start border-t border-primary/20 pt-stack-md"
+              >
+                <div>
+                  <p class="font-headline-lg text-primary uppercase">
+                    CUCHAREABLE DE MILO
+                  </p>
+                  <p class="font-body-md text-on-surface-variant">
+                    Base de brownie de nucita, ganache de chocolate, crema de
+                    Milo y crema de la casa.
+                  </p>
+                </div>
+                <span class="font-headline-lg text-primary">$15.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="bg-inverse-surface border-t-[12px] border-primary py-stack-lg mt-margin-desktop"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-stack-lg max-w-screen-2xl mx-auto"
+      >
+        <div
+          class="font-anybody text-headline-lg font-black text-surface italic uppercase"
+        >
+          MONCH BURGER
+        </div>
+        <div class="flex flex-wrap justify-center gap-gutter">
+          <a
+            class="font-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="font-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="font-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-colors"
+            href="#"
+            >Work With Us</a
+          >
+          <a
+            class="font-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-colors"
+            href="#"
+            >Instagram</a
+          >
+          <a
+            class="font-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-colors"
+            href="#"
+            >WhatsApp</a
+          >
+        </div>
+        <p class="font-body-md text-primary-fixed uppercase tracking-wider">
+          © 2026 MONCH BURGER - NO ES FAST FOOD, ES MONCH.
+        </p>
+      </div>
+    </footer>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Header scroll effect
+        const header = document.querySelector("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            header.classList.add("shadow-xl");
+          } else {
+            header.classList.remove("shadow-xl");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

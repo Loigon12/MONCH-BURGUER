@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>MONCH - Toma tu Pedido</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Archivo+Narrow:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "inverse-surface": "#3f2c29",
+                        "on-surface-variant": "#5c403b",
+                        "primary": "#b40004",
+                        "surface-container-highest": "#fcdbd6",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#fcdbd6",
+                        "background": "#fff8f7",
+                        "surface": "#fff8f7",
+                        "surface-container": "#ffe9e6"
+                },
+                "spacing": {
+                        "base": "8px",
+                        "stack-md": "12px",
+                        "margin-desktop": "40px",
+                        "stack-sm": "4px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "24px",
+                        "gutter": "16px"
+                },
+                "fontFamily": {
+                        "body-md": ["Archivo Narrow"],
+                        "display-lg": ["Anybody"],
+                        "body-lg": ["Archivo Narrow"],
+                        "headline-lg": ["Anybody"],
+                        "headline-xl": ["Anybody"],
+                        "label-bold": ["Space Grotesk"]
+                },
+                "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "display-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                }
+              },
+            },
+          }
+        </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .checkerboard-border {
+            background-image: 
+                linear-gradient(45deg, #b40004 25%, transparent 25%), 
+                linear-gradient(-45deg, #b40004 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #b40004 75%), 
+                linear-gradient(-45deg, transparent 75%, #b40004 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            background-color: #fff8f7;
+            height: 20px;
+            width: 100%;
+        }
+
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #b40004;
+        }
+
+        .sticker-rotate { transform: rotate(-1.5deg); }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-white font-body-md overflow-x-hidden">
+
+<!-- Header Simple -->
+<header class="bg-background border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4">
+        <div>
+            <div class="font-anybody text-headline-xl font-black italic text-primary uppercase leading-none">MONCH</div>
+            <p class="font-label-bold text-xs uppercase tracking-widest text-on-surface-variant mt-1">Formulario de Pedido Oficial</p>
+        </div>
+        <a href="javascript:history.back()" class="border-2 border-primary bg-white text-primary font-label-bold px-4 py-2 brutalist-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all text-sm uppercase">
+            Volver al Inicio
+        </a>
+    </div>
+</header>
+
+<div class="checkerboard-border"></div>
+
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-margin-desktop items-start">
+        
+        <!-- COLUMNA IZQUIERDA: MENÚ Y CANTIDADES -->
+        <div class="lg:col-span-7 space-y-margin-desktop">
+            
+            <!-- SECCIÓN HAMBURGUESAS -->
+            <div>
+                <div class="border-b-4 border-primary pb-2 mb-6">
+                    <h2 class="font-display-lg text-headline-xl text-primary uppercase">1. SELECCIONA TUS MONCH</h2>
+                    <p class="font-label-bold text-on-surface-variant text-xs uppercase mt-1">Todas incluyen papas a la francesa</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- Item 1 -->
+                    <div class="bg-white border-2 border-primary p-4 brutalist-shadow flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h3 class="font-headline-lg text-lg text-primary uppercase">CLÁSICA MONCH</h3>
+                                <span class="font-label-bold text-primary">$28.900</span>
+                            </div>
+                            <p class="text-xs text-on-surface-variant leading-tight">Pan brioche, carne Angus 125g, queso Colby, queso mozzarella, tocineta, tomate, lechuga, salsa morrón y alioli.</p>
+                        </div>
+                        <div class="flex items-center justify-end gap-3 bg-surface-container border-2 border-primary p-2 w-full sm:w-auto">
+                            <button type="button" onclick="changeQty('clasica_monch', -1)" class="text-primary font-black text-xl px-2 hover:scale-110 select-none">-</button>
+                            <input type="number" id="clasica_monch" data-name="Clásica Monch" data-price="28900" value="0" min="0" class="w-12 text-center font-label-bold bg-transparent border-none focus:ring-0 p-0 text-on-background pointer-events-none" />
+                            <button type="button" onclick="changeQty('clasica_monch', 1)" class="text-primary font-black text-xl px-2 hover:scale-110 select-none">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-white border-2 border-primary p-4 brutalist-shadow flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h3 class="font-headline-lg text-lg text-primary uppercase">SWEET MONCH</h3>
+                                <span class="font-label-bold text-primary">$32.900</span>
+                            </div>
+                            <p class="text-xs text-on-surface-variant leading-tight">Pan brioche, carne Angus 125g, queso crema, mermelada de tocineta al Jack Daniels y salsa morrón.</p>
+                        </div>
+                        <div class="flex items-center justify-end gap-3 bg-surface-container border-2 border-primary p-2 w-full sm:w-auto">
+                            <button type="button" onclick="changeQty('sweet_monch', -1)" class="text-primary font-black text-xl px-2 hover:scale-110 select-none">-</button>
+                            <input type="number" id="sweet_monch" data-name="Sweet Monch" data-price="32900" value="0" min="0" class="w-12 text-center font-label-bold bg-transparent border-none focus:ring-0 p-0 text-on-background pointer-events-none" />
+                            <button type="button" onclick="changeQty('sweet_monch', 1)" class="text-primary font-black text-xl px-2 hover:scale-110 select-none">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-white border-2 border-primary p-4 brutalist-shadow flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h3 class="font-headline-lg text-lg text-primary uppercase">SMASH MONCH</h3>
+                                <span class="font-label-bold text-primary">$30.900</span>
+                            </div>
+                            <p class="text-xs text-on-surface-variant leading-tight">Pan brioche, dos carnes Angus de 65g, doble queso cheddar, tocineta premium, salsa morrón y alioli.</p>
+                        </div>
+                        <div class="flex items-center justify-end gap-3 bg-surface-container border-2 border-primary p-2 w-full sm:w-auto">
+                            <button type="button" onclick="changeQty('smash_monch', -1)" class="text-primary font-black text-xl px-2 hover:scale-110 select-none">-</button>
+                            <input type="number" id="smash_monch" data-name="Smash Monch" data-price="30900" value="0" min="0" class="w-12 text-center font-label-bold bg-transparent border-none focus:ring-0 p-0 text-on-background pointer-events-none" />
+                            <button type="button" onclick="changeQty('smash_monch', 1)" class="text-primary font-black text-xl px-2 hover:scale-110 select-none">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="bg-white border-2 border-primary p-4 brutalist-shadow flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h3 class="font-headline-lg text-lg text-primary uppercase">ORIGINAL MONCH</h3>
+                                <span class="font-label-bold text-primary">$29.900</span>
+                            </div>
+                            <p class="text-xs text-on-surface-variant leading-tight">Pan brioche, carne Angus 125g, doble queso Colby, tocineta premium, salsa morrón y alioli.</p>
+                        </div>
+                        <div class="flex items-center justify-end gap-3 bg-surface-container border-2 border-primary p-2 w-full sm:w-auto">
+                            <button type="button" onclick="changeQty('original_monch', -1)" class="text-primary font-black text-xl px-2 hover:scale-110 select-none">-</button>
+                            <input type="number" id="original_monch" data-name="Original Monch" data-price="29900" value="0" min="0" class="w-12 text-center font-label-bold bg-transparent border-none focus:ring-0 p-0 text-on-background pointer-events-none" />
+                            <button type="button" onclick="changeQty('original_monch', 1)" class="text-primary font-black text-xl px-2 hover:scale-110 select-none">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="bg-primary text-white border-2 border-primary p-4 brutalist-shadow flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h3 class="font-headline-lg text-lg uppercase">DOBLE MONCH</h3>
+                                <span class="font-label-bold text-white">$35.900</span>
+                            </div>
+                            <p class="text-xs opacity-90 leading-tight">Pan brioche, doble carne Angus (250g), doble queso Colby, doble tocineta premium, salsa morrón y alioli.</p>
+                        </div>
+                        <div class="flex items-center justify-end gap-3 bg-white border-2 border-primary p-2 w-full sm:w-auto">
+                            <button type="button" onclick="changeQty('doble_monch', -1)" class="text-primary font-black text-xl px-2 hover:scale-110 select-none">-</button>
+                            <input type="number" id="doble_monch" data-name="Doble Monch" data-price="35900" value="0" min="0" class="w-12 text-center font-label-bold bg-transparent border-none focus:ring-0 p-0 text-primary pointer-events-none" />
+                            <button type="button" onclick="changeQty('doble_monch', 1)" class="text-primary font-black text-xl px-2 hover:scale-110 select-none">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN ADICIONALES Y ACOMPAÑANTES -->
+            <div>
+                <div class="border-b-4 border-primary pb-2 mb-6">
+                    <h2 class="font-display-lg text-headline-xl text-primary uppercase">2. PAPAS EXTRA Y ADICIONALES</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Papas XL -->
+                    <div class="bg-surface-container-highest border-2 border-primary p-3 flex justify-between items-center">
+                        <div class="pr-2">
+                            <span class="font-label-bold text-sm block uppercase">PAPAS MONCH XL</span>
+                            <span class="text-xs text-primary font-bold">$14.900</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white border border-primary p-1">
+                            <button type="button" onclick="changeQty('papas_xl', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                            <input type="number" id="papas_xl" data-name="Papas Monch XL" data-price="14900" value="0" min="0" class="w-8 text-center font-label-bold bg-transparent border-none focus:ring-0 p-0 text-xs pointer-events-none" />
+                            <button type="button" onclick="changeQty('papas_xl', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Tocineta -->
+                    <div class="bg-white border-2 border-primary p-3 flex justify-between items-center">
+                        <div>
+                            <span class="font-label-bold text-sm block uppercase">TOCINETA PREMIUM</span>
+                            <span class="text-xs text-primary font-bold">$2.000</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-surface-container border border-primary p-1">
+                            <button type="button" onclick="changeQty('adic_tocineta', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                            <input type="number" id="adic_tocineta" data-name="Adic. Tocineta" data-price="2000" value="0" min="0" class="w-8 text-center font-label-bold bg-transparent border-none focus:ring-0 p-0 text-xs pointer-events-none" />
+                            <button type="button" onclick="changeQty('adic_tocineta', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Colby -->
+                    <div class="bg-white border-2 border-primary p-3 flex justify-between items-center">
+                        <div>
+                            <span class="font-label-bold text-sm block uppercase">QUESO COLBY</span>
+                            <span class="text-xs text-primary font-bold">$1.600</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-surface-container border border-primary p-1">
+                            <button type="button" onclick="changeQty('adic_colby', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                            <input type="number" id="adic_colby" data-name="Adic. Queso Colby" data-price="1600" value="0" min="0" class="w-8 text-center font-label-bold bg-transparent border-none focus:ring-0 p-0 text-xs pointer-events-none" />
+                            <button type="button" onclick="changeQty('adic_colby', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Cheddar -->
+                    <div class="bg-white border-2 border-primary p-3 flex justify-between items-center">
+                        <div>
+                            <span class="font-label-bold text-sm block uppercase">QUESO CHEDDAR</span>
+                            <span class="text-xs text-primary font-bold">$1.500</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-surface-container border border-primary p-1">
+                            <button type="button" onclick="changeQty('adic_cheddar', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                            <input type="number" id="adic_cheddar" data-name="Adic. Queso Cheddar" data-price="1500" value="0" min="0" class="w-8 text-center font-label-bold bg-transparent border-none focus:ring-0 p-0 text-xs pointer-events-none" />
+                            <button type="button" onclick="changeQty('adic_cheddar', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Mozzarella -->
+                    <div class="bg-white border-2 border-primary p-3 flex justify-between items-center">
+                        <div>
+                            <span class="font-label-bold text-sm block uppercase">QUESO MOZZARELLA</span>
+                            <span class="text-xs text-primary font-bold">$1.200</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-surface-container border border-primary p-1">
+                            <button type="button" onclick="changeQty('adic_mozzarella', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                            <input type="number" id="adic_mozzarella" data-name="Adic. Queso Mozzarella" data-price="1200" value="0" min="0" class="w-8 text-center font-label-bold bg-transparent border-none focus:ring-0 p-0 text-xs pointer-events-none" />
+                            <button type="button" onclick="changeQty('adic_mozzarella', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Francesa Extra -->
+                    <div class="bg-white border-2 border-primary p-3 flex justify-between items-center">
+                        <div>
+                            <span class="font-label-bold text-sm block uppercase">PAPAS FRANCESA Extra</span>
+                            <span class="text-xs text-primary font-bold">$6.900</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-surface-container border border-primary p-1">
+                            <button type="button" onclick="changeQty('adic_papas', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                            <input type="number" id="adic_papas" data-name="Papas Francesa Extra (140g)" data-price="6900" value="0" min="0" class="w-8 text-center font-label-bold bg-transparent border-none focus:ring-0 p-0 text-xs pointer-events-none" />
+                            <button type="button" onclick="changeQty('adic_papas', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN BEBIDAS Y POSTRES -->
+            <div>
+                <div class="border-b-4 border-primary pb-2 mb-6">
+                    <h2 class="font-display-lg text-headline-xl text-primary uppercase">3. BEBIDAS Y POSTRES</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Bebidas -->
+                    <div class="space-y-3">
+                        <h3 class="font-label-bold text-primary border-b border-primary/20 pb-1 uppercase">Bebidas</h3>
+                        
+                        <div class="flex justify-between items-center bg-white p-2 border border-primary">
+                            <span class="text-sm font-bold">GASEOSA ($6.000)</span>
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="changeQty('bev_gaseosa', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                                <input type="number" id="bev_gaseosa" data-name="Gaseosa" data-price="6000" value="0" min="0" class="w-6 text-center font-label-bold bg-transparent border-none p-0 text-xs pointer-events-none" />
+                                <button type="button" onclick="changeQty('bev_gaseosa', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center bg-white p-2 border border-primary">
+                            <span class="text-sm font-bold">AGUA ($6.000)</span>
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="changeQty('bev_agua', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                                <input type="number" id="bev_agua" data-name="Agua" data-price="6000" value="0" min="0" class="w-6 text-center font-label-bold bg-transparent border-none p-0 text-xs pointer-events-none" />
+                                <button type="button" onclick="changeQty('bev_agua', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center bg-white p-2 border border-primary">
+                            <span class="text-sm font-bold">SODA HATSU ($7.000)</span>
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="changeQty('bev_hatsu', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                                <input type="number" id="bev_hatsu" data-name="Soda Hatsu" data-price="7000" value="0" min="0" class="w-6 text-center font-label-bold bg-transparent border-none p-0 text-xs pointer-events-none" />
+                                <button type="button" onclick="changeQty('bev_hatsu', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center bg-white p-2 border border-primary">
+                            <span class="text-sm font-bold">CERVEZA CORONA ($7.000)</span>
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="changeQty('bev_corona', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                                <input type="number" id="bev_corona" data-name="Cerveza Corona" data-price="7000" value="0" min="0" class="w-6 text-center font-label-bold bg-transparent border-none p-0 text-xs pointer-events-none" />
+                                <button type="button" onclick="changeQty('bev_corona', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Postres -->
+                    <div class="space-y-3">
+                        <h3 class="font-label-bold text-primary border-b border-primary/20 pb-1 uppercase">Postres (By Dankai)</h3>
+
+                        <div class="flex justify-between items-center bg-white p-2 border border-primary">
+                            <span class="text-sm font-bold">BROWNIE NUCITA ($5.500)</span>
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="changeQty('pos_nucita', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                                <input type="number" id="pos_nucita" data-name="Brownie Nucita" data-price="5500" value="0" min="0" class="w-6 text-center font-label-bold bg-transparent border-none p-0 text-xs pointer-events-none" />
+                                <button type="button" onclick="changeQty('pos_nucita', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center bg-white p-2 border border-primary">
+                            <span class="text-sm font-bold">BROWNIE REDVELVET ($6.500)</span>
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="changeQty('pos_redvelvet', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                                <input type="number" id="pos_redvelvet" data-name="Brownie Redvelvet" data-price="6500" value="0" min="0" class="w-6 text-center font-label-bold bg-transparent border-none p-0 text-xs pointer-events-none" />
+                                <button type="button" onclick="changeQty('pos_redvelvet', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center bg-white p-2 border border-primary">
+                            <span class="text-sm font-bold">CUCHAREABLE REDVELVET ($15.000)</span>
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="changeQty('pos_cuch_red', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                                <input type="number" id="pos_cuch_red" data-name="Cuchareable Redvelvet" data-price="15000" value="0" min="0" class="w-6 text-center font-label-bold bg-transparent border-none p-0 text-xs pointer-events-none" />
+                                <button type="button" onclick="changeQty('pos_cuch_red', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center bg-white p-2 border border-primary">
+                            <span class="text-sm font-bold">CUCHAREABLE MILO ($15.000)</span>
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="changeQty('pos_cuch_milo', -1)" class="text-primary font-bold px-1 text-sm">-</button>
+                                <input type="number" id="pos_cuch_milo" data-name="Cuchareable Milo" data-price="15000" value="0" min="0" class="w-6 text-center font-label-bold bg-transparent border-none p-0 text-xs pointer-events-none" />
+                                <button type="button" onclick="changeQty('pos_cuch_milo', 1)" class="text-primary font-bold px-1 text-sm">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: DATOS DE ENVÍO Y CONFIRMACIÓN -->
+        <div class="lg:col-span-5 lg:sticky lg:top-28">
+            <div class="bg-white border-4 border-primary p-gutter brutalist-shadow space-y-6">
+                <div class="border-b-2 border-primary pb-2">
+                    <h2 class="font-display-lg text-headline-lg text-primary uppercase">4. DATOS DE ENTREGA</h2>
+                </div>
+
+                <!-- Formulario de datos -->
+                <div class="space-y-4">
+                    <div>
+                        <label for="customer_name" class="font-label-bold text-xs uppercase text-primary block mb-1">Nombre Completo *</label>
+                        <input type="text" id="customer_name" required class="w-full border-2 border-primary p-2 font-body-md focus:outline-none focus:ring-0 focus:border-primary bg-background" placeholder="Ej: Pedro Pérez" />
+                    </div>
+
+                    <div>
+                        <label for="delivery_method" class="font-label-bold text-xs uppercase text-primary block mb-1">Método de Entrega *</label>
+                        <select id="delivery_method" onchange="toggleAddressField()" class="w-full border-2 border-primary p-2 font-body-md focus:outline-none focus:ring-0 focus:border-primary bg-background">
+                            <option value="domicilio">Domicilio / Envío</option>
+                            <option value="retiro">Retiro en Local</option>
+                        </select>
+                    </div>
+
+                    <div id="address_container">
+                        <label for="customer_address" class="font-label-bold text-xs uppercase text-primary block mb-1">Dirección de Envío *</label>
+                        <input type="text" id="customer_address" class="w-full border-2 border-primary p-2 font-body-md focus:outline-none focus:ring-0 focus:border-primary bg-background" placeholder="Ej: Mz C Casa 15 - Barrio Centro" />
+                    </div>
+
+                    <div>
+                        <label for="customer_notes" class="font-label-bold text-xs uppercase text-primary block mb-1">Notas Especiales (Opcional)</label>
+                        <textarea id="customer_notes" rows="2" class="w-full border-2 border-primary p-2 font-body-md focus:outline-none focus:ring-0 focus:border-primary bg-background" placeholder="Ej: Hamburguesa clásica sin cebolla, traer cambio de $50.000..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Resumen en vivo -->
+                <div class="bg-surface-container p-3 border-2 border-dashed border-primary">
+                    <h3 class="font-label-bold text-xs uppercase text-primary mb-2 tracking-wider">Resumen Actual del Pedido:</h3>
+                    <div id="live_summary_items" class="text-xs space-y-1 font-body-md max-h-32 overflow-y-auto">
+                        <p class="text-on-surface-variant italic">Ningún producto seleccionado todavía.</p>
+                    </div>
+                    <div class="border-t border-primary/20 mt-2 pt-2 flex justify-between items-baseline">
+                        <span class="font-label-bold text-sm text-on-background">TOTAL ESTIMADO:</span>
+                        <span id="live_total" class="font-display-lg text-xl text-primary">$0</span>
+                    </div>
+                </div>
+
+                <!-- Botón Enviar -->
+                <button type="button" onclick="processAndSend()" class="w-full bg-primary text-white font-headline-lg py-4 border-2 border-primary brutalist-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all flex justify-center items-center gap-2 text-lg uppercase tracking-wide">
+                    <span>Confirmar y Enviar</span>
+                    <span class="material-symbols-outlined font-bold">send</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer class="bg-inverse-surface border-t-[8px] border-primary py-6 mt-16 text-center text-white">
+    <p class="font-body-md text-xs opacity-70 uppercase tracking-wider">
+        © 2026 MONCH BURGER - NO ES FAST FOOD, ES MONCH.
+    </p>
+</footer>
+
+<script>
+    const WHATSAPP_NUMBER = "573138792518"; 
+
+    function changeQty(id, delta) {
+        const input = document.getElementById(id);
+        let val = parseInt(input.value) + delta;
+        if (val < 0) val = 0;
+        input.value = val;
+        calculateLiveTotal();
+    }
+
+    function toggleAddressField() {
+        const method = document.getElementById('delivery_method').value;
+        const container = document.getElementById('address_container');
+        if (method === 'retiro') {
+            container.style.display = 'none';
+        } else {
+            container.style.display = 'block';
+        }
+    }
+
+    function formatPrice(amount) {
+        return '$' + amount.toLocaleString('es-CO');
+    }
+
+    function calculateLiveTotal() {
+        const inputs = document.querySelectorAll('input[type="number"]');
+        const summaryContainer = document.getElementById('live_summary_items');
+        let total = 0;
+        let hasItems = false;
+        
+        summaryContainer.innerHTML = '';
+
+        inputs.forEach(input => {
+            const qty = parseInt(input.value);
+            if (qty > 0) {
+                hasItems = true;
+                const name = input.getAttribute('data-name');
+                const price = parseInt(input.getAttribute('data-price'));
+                const subtotal = price * qty;
+                total += subtotal;
+
+                const p = document.createElement('p');
+                p.className = 'flex justify-between';
+                p.innerHTML = `<span>${qty}x ${name}</span><span class="font-bold">${formatPrice(subtotal)}</span>`;
+                summaryContainer.appendChild(p);
+            }
+        });
+
+        if (!hasItems) {
+            summaryContainer.innerHTML = '<p class="text-on-surface-variant italic">Ningún producto seleccionado todavía.</p>';
+        }
+
+        document.getElementById('live_total').textContent = formatPrice(total);
+        return { total, hasItems };
+    }
+
+    function processAndSend() {
+        const name = document.getElementById('customer_name').value.trim();
+        const method = document.getElementById('delivery_method').value;
+        const address = document.getElementById('customer_address').value.trim();
+        const notes = document.getElementById('customer_notes').value.trim();
+        
+        if (!name) {
+            alert('Por favor, ingresa tu nombre completo.');
+            return;
+        }
+
+        if (method === 'domicilio' && !address) {
+            alert('Por favor, ingresa la dirección de envío para el domicilio.');
+            return;
+        }
+
+        const { total, hasItems } = calculateLiveTotal();
+        
+        if (!hasItems) {
+            alert('Debes seleccionar al menos un producto del menú para tomar tu orden.');
+            return;
+        }
+
+        // Construir mensaje para WhatsApp
+        let message = "*NUEVO PEDIDO MONCH* \n\n";
+        message += ` *Cliente:* ${name}\n`;
+        message += ` *Método:* ${method === 'domicilio' ? 'Domicilio' : 'Retiro en Local'}\n`;
+        if (method === 'domicilio') {
+            message += `*Dirección:* ${address}\n`;
+        }
+        message += "\n🛒 *DETALLE DEL PEDIDO:*\n";
+
+        const inputs = document.querySelectorAll('input[type="number"]');
+        inputs.forEach(input => {
+            const qty = parseInt(input.value);
+            if (qty > 0) {
+                const productName = input.getAttribute('data-name');
+                const price = parseInt(input.getAttribute('data-price'));
+                message += `• ${qty}x ${productName} (${formatPrice(price * qty)})\n`;
+            }
+        });
+
+        message += `\n*TOTAL A PAGAR: ${formatPrice(total)}*\n`;
+
+        if (notes) {
+            message += `\n*Notas especiales:* ${notes}\n`;
+        }
+
+        // Abrir URL de WhatsApp
+        const finalUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        window.open(finalUrl, '_blank');
+    }
+
+    // Inicializar resumen al cargar
+    window.onload = calculateLiveTotal;
+</script>
+
+</body>
+</html>
